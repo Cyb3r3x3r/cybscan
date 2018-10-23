@@ -1,4 +1,4 @@
-# Cybscan
+# Cybscan v0.1.5
 - Scannner for wordpress websites - 
 Many more features will be added further
 ## Installation
@@ -20,7 +20,12 @@ and then run
 python cybscan.py
 ```
 ## Features
-**1. Grab the server 
+1. Grab the IP,server info.
+2. Grab the wordpress version info by 5 methods.
+3. Grab the http headers information.
+4. Check the RSS generator.
+5. Check if directory indexing is enabled.
+6. Check if XML-RPC interface is available.
 2. Grab the themes of website and check it for vulnerability
 3. Grab the plugins installed and check them for vulnerability
 4. Check honeypot probability
