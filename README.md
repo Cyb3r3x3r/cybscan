@@ -34,7 +34,7 @@ python cybscan.py
 
 ### Usage
 ```
-python cybscan.py [url]
+python cybscan.py example.com
 ```
 
 ***Contact me or help me improving this repository...Thanks***
