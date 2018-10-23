@@ -374,7 +374,7 @@ class cybscan():
                 print('{} [+]All the links are saved to {}{}'.format(g,file,e))
                 print('{} [+] Looks like all the links are retrieved{}'.format(g,e))
         except Exception:
-            print(' {][-] Looks like lxml is not working or nor installed correctly...try reinstalling{}'.format(r,e))
+            print(' {}[-] Looks like lxml is not working or nor installed correctly...try reinstalling{}'.format(r,e))
     def grab_http(self):
         checker = 'http://api.hackertarget.com/httpheaders/?q='
         check_headers = requests.get(checker + self.url,verify=False)
