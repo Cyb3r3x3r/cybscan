@@ -2,7 +2,7 @@
 # https://github.com/cyb3r3x3r
 # Copying will not make you programmer xD ;)
 __author__ = 'Cyb3r3x3r'
-Version = '0.1.5'
+Version = '0.1.6'
 
 import json, re, os, time, random, socket, sys
 from sys import*
@@ -18,10 +18,7 @@ try:
 except:
     print('---------------------------------------------------')
     print('[+]colorama Module not found')
-    print('[!] Installing colorama..........')
-    time.sleep(2)
-    os.system('python -m pip install colorama --trusted-host pypi.org --trusted-host files.pythonhosted.org')
-    
+    print('[+]Please install all modules fron requirements.txt file')
 if sys.version[0] > '2':
     pass
 else:
@@ -32,18 +29,13 @@ try:
     from bs4 import BeautifulSoup
 except ImportError:
     print('[-] bs4 module not found')
-    print('[!] Installing bs4 module........')
-    time.sleep(2)
-    os.system('python -m pip install bs4 --trusted-host pypi.org --trusted-host files.pythonhosted.org')
+    print('[+]Please install all modules fron requirements.txt file')
 try:
     import requests
     from requests.packages.urllib3.exceptions import InsecureRequestWarning
 except :
     print('---------------------------------------------------')
-    print('[+]requests Module not found')
-    print('[!] Installing requests module....')
-    time.sleep(2)
-    os.system('python -m pip install requests --trusted-host pypi.org --trusted-host files.pythonhosted.org')
+    print('[+]Please install all modules fron requirements.txt file')
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 e = '\033[1;m'
 
@@ -85,6 +77,8 @@ class cybscan():
                 print(y + '---------------------------------------' + res)
                 self.check_rss()
                 print(y + '---------------------------------------' + res)
+                print(m + ' [~] Checking if Directory Indexing is enabled............' + e)
+                time.sleep(2)
                 self.dir_index()
                 print(y + '---------------------------------------' + res)
                 self.xmlrpc()
@@ -96,7 +90,7 @@ class cybscan():
                 print(y + '---------------------------------------' + res)
                 self.grab_plugin()
                 if self.grab_plugin() == None:
-                    print('{} [-]Unable to find plugins{}'.format(r,e))
+                    print('{} [-]Unable to find more plugins{}'.format(r,e))
                 print(y + '---------------------------------------' + res)
                 usr_choice = input(y + '    [!]' + w + 'Do you want to enumerate all usernames :' + y + '[Y/n]' + e)
                 if usr_choice == 'n' or usr_choice == 'N':
@@ -371,10 +365,12 @@ class cybscan():
                     else:
                         f.write(str(link.get('href')))
                         f.write('\n')
+
+                time.sleep(2)
                 print('{} [+]All the links are saved to {}{}'.format(g,file,e))
                 print('{} [+] Looks like all the links are retrieved{}'.format(g,e))
         except Exception:
-            print(' {}[-] Looks like lxml is not working or nor installed correctly...try reinstalling{}'.format(r,e))
+            print('[-] Looks like lxml is not working or nor installed correctly...try reinstalling{}'.format(r,e))
     def grab_http(self):
         checker = 'http://api.hackertarget.com/httpheaders/?q='
         check_headers = requests.get(checker + self.url,verify=False)
