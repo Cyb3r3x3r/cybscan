@@ -1,4 +1,4 @@
-# Cybscan v0.1.5
+# Cybscan v0.1.6
 - Scannner for wordpress websites - 
 Many more features will be added further
 ## Installation
