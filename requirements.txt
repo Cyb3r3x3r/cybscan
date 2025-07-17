@@ -1,4 +1,6 @@
-requests
-colorama
-bs4
-lxml
+requests>=2.32.3
+colorama>=0.4.6
+beautifulsoup4>=4.12.3
+lxml>=6.0.0
+whois>=1.20240129.2
+python-dotenv>=0.21.0
